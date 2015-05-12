@@ -1,0 +1,14 @@
+{
+  "name": "frontend-test",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rahul Anand",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "grunt": "~0.4.5"
+  }
+}

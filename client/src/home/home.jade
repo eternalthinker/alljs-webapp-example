@@ -1,0 +1,27 @@
+.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+  .container
+    .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='#') Project name
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li.active
+          a(href='#') Home
+        li
+          a(href='#about') About
+        li
+          a(href='#contact') Contact
+    // /.nav-collapse
+.container
+  .row
+    .navs
+      span.nav-element(ng-repeat="tab in tabs", ng-class="{'active': tab.active === true}", ng-click="changeState($index)")
+        span.element-name {{tab.label}}
+      div.row
+        div.col-sm-8.col-sm-offset-2
+          div.alert.alert-info.text-center(role="alert") Loading content...
+// /.container

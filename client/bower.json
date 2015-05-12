@@ -1,0 +1,21 @@
+{
+  "name": "frontend-test",
+  "version": "0.0.0",
+  "authors": [
+    "Rahul Anand <et@eternalthinker.co>"
+  ],
+  "description": "Getting started with frontend",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "angular": "1.3",
+    "bootstrap": "~3.3.4"
+  }
+}

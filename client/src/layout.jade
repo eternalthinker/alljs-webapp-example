@@ -1,0 +1,17 @@
+doctype html
+html(lang='en', ng-app="testApp")
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='Test ng app with jade, less, grunt, nodejs')
+    meta(name='author', content='Rahul Anand')
+    title All-JS test app
+    link(rel="stylesheet", type="text/css", href="/assets/#{pkg.name}.css")
+    / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    /[if lt IE 9]
+      script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+      script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+  body
+    div(ui-view="test")
+    script(src="/assets/#{pkg.name}.js", charset="UTF-8")
