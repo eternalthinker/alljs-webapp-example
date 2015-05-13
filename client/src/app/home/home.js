@@ -1,15 +1,13 @@
-angular.module('testApp', [])
+angular.module('testApp.home', [])
 
-  .config(['$stateProvider', function config( $stateProvider ) {
-    $stateProvider.state('test.home', {
+  .config(['$stateProvider', function config($stateProvider) {
+    $stateProvider.state('test.app', {
       url: '/',
       views: {
         "": {
           controller: 'testAppCtrl',
-          templateUrl: 'home/home.html'
+          templateUrl: 'app/home/home.html'
         }
-      },
-      resolve: {
       }
     });
   }])
@@ -46,7 +44,7 @@ angular.module('testApp', [])
             if (i == index) {
               $scope.tabs[i].active = true;
             } else {
-              $scope.tabs[i].active. = false;
+              $scope.tabs[i].active = false;
             }
           }
 

@@ -6,7 +6,7 @@ var http = require('http');
 var https = require('https');
 var fs = require('fs');
 var express =  require('express');
-var bodyParser = require('body-parser');
+//var bodyParser = require('body-parser');
 var compression = require('compression');
 var favicon = require("serve-favicon");
 

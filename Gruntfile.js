@@ -23,8 +23,8 @@ module.exports = function(grunt) {
     build_dir: "client/_build",
 
     app_files: {
-      js: ["client/src/**/*.js"].
-      jade: ["client/src/**/*.jade"],
+      js: ["client/src/**/*.js"],
+      jade: ["client/src/app/**/*.jade"],
       less: ["client/src/imports.less"],
       layout: ["client/src/layout.jade"]
     },
@@ -35,7 +35,9 @@ module.exports = function(grunt) {
          "client/bower_components/angular-bootstrap/ui-bootstrap-tpls.js",
          "client/bower_components/angular-ui-router/release/angular-ui-router.js"
        ],
-       css: [],
+       css: [
+         "client/bower_components/bootstrap/dist/css/bootstrap.min.css"
+       ],
        assets: []
      } 
   } 
@@ -192,7 +194,7 @@ module.exports = function(grunt) {
       compile2html: {
         files: [
           {
-            src: ['src/app/**/*.jade', 'src/ext/**/*.jade'],
+            src: ['src/app/**/*.jade'],
             cwd: 'client',
             dest: '<%= build_dir %>',
             expand: true,
@@ -210,7 +212,7 @@ module.exports = function(grunt) {
       main: {
         options: {
           base: '<%= build_dir %>/src',
-          module: 'engageApp.templates'
+          module: 'testApp.templates'
         },
         src: [ '<%= build_dir %>/src/**/*.html' ],
         dest: '<%= build_dir %>/templates.js'
@@ -230,12 +232,12 @@ module.exports = function(grunt) {
 
   grunt.registerTask( 'default', [ 'build', 'compile' ] );
   grunt.registerTask( 'build', [
-    'clean:all', 'jade', 'html2js', 'jshint', 'less:development', 
-    'copy:app_assets', 'copy:vendor_assets', 'copy:appjs','ngconstant:build',
+    'clean:all', 'jade', 'html2js', 'less:development', 
+    'copy:app_assets', 'copy:vendor_assets', 'copy:appjs',
     'concat:build_css', 'concat:appjs', 'ngAnnotate:build', 'concat:alljs'
   ]);
   grunt.registerTask( 'compile', [
-    'clean:dev', 'less:production', 'cssmin', 'removelogging', 'uglify'
+    'clean:dev', 'less:production', 'cssmin', 'concat:build_css', 'removelogging', 'uglify'
   ]);
 
 };
