@@ -2,7 +2,8 @@ angular.module('testApp.home', [])
 
   .config(['$stateProvider', function config($stateProvider) {
     $stateProvider.state('test.app', {
-      url: '/',
+      //url: '/',
+      url: '',
       views: {
         "": {
           controller: 'testAppCtrl',
@@ -48,7 +49,7 @@ angular.module('testApp.home', [])
             }
           }
 
-          $state.go($scope.tabs[index].state);
+          //$state.go($scope.tabs[index].state);
           $scope.activeStateName = $scope.tabs[index].label;
         }
 

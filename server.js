@@ -17,14 +17,14 @@ app.use(compression());
 // app.use(favicon('client/_build/assets/favicon.ico'));
 app.use('/assets', express.static('client/_build/assets'));
 
-app.get('/', function(req, res, next) {
-  res.sendFile("client/_build/layout.html", {
-    root: __dirname
-  }, function(err) {
-    if (err) {
-      console.log("error:", err);
-      next(err);
-    }
+app.get('/*', function(req, res, next) {
+  res.sendFile("client/_build/index.html", 
+    { root: __dirname }, 
+    function(err) {
+      if (err) {
+        console.log("error:", err);
+        next(err);
+      }
   });
 });
 

@@ -11,7 +11,7 @@
       ul.nav.navbar-nav
         li(ng-repeat="tab in tabs", ng-class="{'active': tab.active === true}", ng-click="changeState($index)")
             a(ui-sref='.{{tab.label | lowercase}}') {{tab.label}}		
-            // a(ui-sref='#') {{tab.label}}		
+            // a(href='#') {{tab.label}}		
     // /.nav-collapse
 .container(ui-view="content")
   .row

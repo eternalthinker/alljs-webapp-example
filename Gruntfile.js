@@ -26,7 +26,7 @@ module.exports = function(grunt) {
       js: ["client/src/**/*.js"],
       jade: ["client/src/app/**/*.jade"],
       less: ["client/src/imports.less"],
-      layout: ["client/src/layout.jade"]
+      layout: ["client/src/index.jade"]
     },
 
      vendor_files: {
@@ -204,7 +204,7 @@ module.exports = function(grunt) {
       },
       index: {
         options: { data: { pkg: pkg } },
-        files:{ "<%= build_dir %>/layout.html": "<%= app_files.layout %>" }
+        files:{ "<%= build_dir %>/index.html": "<%= app_files.layout %>" }
       }
     },
 

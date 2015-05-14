@@ -2,7 +2,7 @@ angular.module('testApp.contact', [])
 
 .config(['$stateProvider', function config($stateProvider) {
   $stateProvider.state('test.app.contact', {
-    url: 'faq',
+    url: 'contact',
     views: {
       "content@test.app": {
         controller: 'testContactCtrl',

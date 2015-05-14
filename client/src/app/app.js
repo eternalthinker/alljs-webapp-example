@@ -8,10 +8,12 @@ angular.module('testApp', [
     ])
 
 .config(['$stateProvider',
+         '$locationProvider',
          '$urlRouterProvider',
-         function config($stateProvider, $urlRouterProvider) {
+         function config($stateProvider, $locationProvider, $urlRouterProvider) {
            $urlRouterProvider.when('', '/');
            $urlRouterProvider.otherwise('/');
+           $locationProvider.html5Mode(true).hashPrefix('!');
 
            $stateProvider
             .state('test', {
