@@ -21,23 +21,23 @@ angular.module('testApp.home', [])
 
         $scope.tabs = [
           {
-            label: "about",
-            active: true,
+            label: "About",
+            active: false,
             state: "test.app.about"
           },
           {
-            label: "faq",
+            label: "FAQ",
             active: false,
             state: "test.app.faq"
           },
           {
-            label: "contact",
+            label: "Contact",
             active: false,
             state: "test.app.contact"
           }
         ];
 
-        $scope.activeStateName = "about";
+        $scope.activeStateName = null;
 
         $scope.changeState = function(index) {
           for (var i = 0; i < $scope.tabs.length; ++i) {
@@ -50,6 +50,15 @@ angular.module('testApp.home', [])
 
           $state.go($scope.tabs[index].state);
           $scope.activeStateName = $scope.tabs[index].label;
+        }
+
+        $scope.goHome = function() {
+          for (var i = 0; i < $scope.tabs.length; ++i) {
+            $scope.tabs[i].active = false;
+          }
+
+          $scope.activeStateName = null;
+          $state.go('test.app');
         }
 
       }

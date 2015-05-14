@@ -1,7 +1,9 @@
-
 angular.module('testApp', [
     'ui.router',
     'testApp.templates',
+    'testApp.about',
+    'testApp.faq',
+    'testApp.contact',
     'testApp.home'
     ])
 
@@ -16,7 +18,6 @@ angular.module('testApp', [
               url: '/',
               views: {
                 'test': { 
-                  //template: 'Message: {{message}}', 
                   template: '<ui-view/>',
                   controller: 'testCtrl'
                 }
@@ -29,7 +30,6 @@ angular.module('testApp', [
     '$state',
 
     function($scope, $state) {
-      //$scope.message = "Hello there!";
       $state.go('test.app');
     }
 ])
