@@ -16,6 +16,7 @@ angular.module('testApp.about', [])
   '$scope',
   '$state',
   function($scope, $state) {
+    console.log("[state: about]");
     
   }
 ]);

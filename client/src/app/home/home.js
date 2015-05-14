@@ -2,7 +2,6 @@ angular.module('testApp.home', [])
 
   .config(['$stateProvider', function config($stateProvider) {
     $stateProvider.state('test.app', {
-      //url: '/',
       url: '',
       views: {
         "": {
@@ -17,6 +16,8 @@ angular.module('testApp.home', [])
       '$scope', 
       '$state',
       function ($scope, $state) {
+
+        console.log("[home.js] [state:test.app]" );
         
         $scope.username = "testuser";
 
